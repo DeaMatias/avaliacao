@@ -1,12 +1,8 @@
 package com.rd.treinamentodev.AvaliacaoSpringBoot.service;
 
-import com.rd.treinamentodev.AvaliacaoSpringBoot.model.dto.AlunoDTO;
-import com.rd.treinamentodev.AvaliacaoSpringBoot.model.dto.CursoDTO;
-import com.rd.treinamentodev.AvaliacaoSpringBoot.model.dto.InstrutorDTO;
+
 import com.rd.treinamentodev.AvaliacaoSpringBoot.model.dto.TurmaDTO;
-import com.rd.treinamentodev.AvaliacaoSpringBoot.model.entity.AlunoEntity;
-import com.rd.treinamentodev.AvaliacaoSpringBoot.model.entity.CursoEntity;
-import com.rd.treinamentodev.AvaliacaoSpringBoot.model.entity.InstrutorEntity;
+
 import com.rd.treinamentodev.AvaliacaoSpringBoot.model.entity.TurmaEntity;
 import com.rd.treinamentodev.AvaliacaoSpringBoot.repository.CursoRepository;
 import com.rd.treinamentodev.AvaliacaoSpringBoot.repository.TurmaRepository;
@@ -34,9 +30,17 @@ public class TurmaService {
 
         //TODO implementar a conversão da lista de objetos de TurmaEntity para TurmaDTO e retornar a listDTO preenchida
 
+        for(TurmaEntity turmaEntity : listEntity) {
+            TurmaDTO turmaDTO = new TurmaDTO();
+            turmaDTO.setCurso(turmaEntity.getCurso());
+            turmaDTO.setAlunos(turmaEntity.getAlunos());
+            turmaDTO.setInstrutores(turmaEntity.getInstrutores());
+            turmaDTO.setDtInicio(turmaEntity.getDtInicio());
+            turmaDTO.setDtFim(turmaEntity.getDtFinal());
 
-
-
+            listDTO.add(turmaDTO);
+        }
         return listDTO;
+
     }
 }

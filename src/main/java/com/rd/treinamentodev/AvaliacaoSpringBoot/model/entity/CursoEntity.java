@@ -16,7 +16,7 @@ public class CursoEntity {
     private Long idCurso;
 
     @Column(name = "DS_CURSO")
-    private String nomeCurso;
+    private String nome;
 
     @Column(name = "NR_CARGA_HORARIA")
     private Integer nrCargaHoraria;

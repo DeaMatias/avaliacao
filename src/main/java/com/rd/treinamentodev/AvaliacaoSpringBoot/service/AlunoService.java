@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AlunoService {
 
@@ -20,11 +22,7 @@ public class AlunoService {
         AlunoEntity entity = new AlunoEntity();
         entity.setNomeAluno(alunoDTO.getNome());
         entity.setCpf(alunoDTO.getCpf());
-
         //TODO validar se o CPF existe no banco antes de existir, caso exista retornar mensagem de erro
-
-
-
 
         entity = alunoRepository.save(entity);
 
